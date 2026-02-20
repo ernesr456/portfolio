@@ -1,7 +1,6 @@
 // Data for portfolio
 import {
   Angular,
-  ExpressjsIcon,
   JavaScriptIcon,
   Laravel,
   NestjsIcon,
@@ -10,7 +9,6 @@ import {
   Polkadot,
   ReactIcon,
   Rust,
-  SocketIcon,
   TailwindCSS,
   TypescriptIcon,
 } from '../utils/icons'

@@ -27,10 +27,10 @@ export default async function Image() {
           padding: '1rem',
         }}>
         <h1 style={{ fontSize: 32, color: '#18f2e5', margin: 0 }}>
-          John Doe | Full-Stack Web Developer in Chicago
+          Ernesto Almario | Ernesto Almario is a Full-Stack and Web3 Engineer based in the Philippines. He builds scalable web applications and blockchain-powered solutions using React, Next.js, Node.js, and Rust. Let’s build secure, modern digital products together.
         </h1>
         <h2 style={{ fontSize: 40, color: 'white', marginTop: 30 }}>
-          Crafting innovative solutions to solve real-world problems
+          Full-Stack & Smart Contract Engineer building secure, scalable distributed systems and decentralized protocols.
         </h2>
       </div>
     ),
