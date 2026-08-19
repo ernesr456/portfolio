@@ -1,23 +1,22 @@
-import { skillList } from '@/appData'
-import ContactSection from '@/components/Contact/ContactSection'
-import Hero from '@/components/Hero/Hero'
-import ProjectSection from '@/components/Projects/ProjectSection'
-import ServiceSection from '@/components/Services/ServiceSection'
-import Skills from '@/components/Skills/Skills'
-import { getAllProjects } from '@/services'
+import React from 'react';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import HeroSection from '@/app/components/HeroSection';
+import ProjectsSection from '@/app/components/ProjectsSection';
+import SkillsSection from '@/app/components/SkillsSection';
+import ExperienceSection from '@/app/components/ExperienceSection';
+import ContactSection from '@/app/components/ContactSection';
 
-export default async function Home() {
-  const projects = await getAllProjects()
-
+export default function HomePage() {
   return (
-    <main>
-      <Hero />
-      <Skills skills={skillList} />
-      <div className="mx-auto my-8 max-w-[1200px] px-4 md:my-[3.75rem]">
-        <ProjectSection projects={projects} />
-        <ServiceSection />
-        <ContactSection />
-      </div>
+    <main className="min-h-screen bg-background overflow-x-hidden">
+      <Header />
+      <HeroSection />
+      <ProjectsSection />
+      <SkillsSection />
+      <ExperienceSection />
+      <ContactSection />
+      <Footer />
     </main>
-  )
+  );
 }

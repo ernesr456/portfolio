@@ -44,6 +44,9 @@ Before running the project, make sure to create a `.env.local` file in the root 
 
 ```env
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY=your-recaptcha-v3-site-key
+RECAPTCHA_SECRET_KEY=your-recaptcha-v3-secret-key
+APPS_SCRIPT_URL=https://script.google.com/macros/s/your-deployment-id/exec
 ```
 
 This ensures proper configuration of environment variables.
@@ -91,19 +94,20 @@ In the same manner, you can also update the Contact and Testimonial sections. Th
 
 ## 📨 Configuring the Contact Section
 
-To integrate **Formspree** into your contact form, follow these simple steps:
+The contact form uses Google reCAPTCHA v3 and a server-side API route so captcha
+tokens cannot be bypassed from the browser.
 
-1. Go to the [Formspree website](https://formspree.io/) and create a new project.
-2. Add a new form (you'll get a unique form endpoint URL).
-3. Copy the form endpoint and paste it into your `.env.local` file like this:
+1. Create a reCAPTCHA v3 site in the [Google reCAPTCHA console](https://www.google.com/recaptcha/admin/create).
+2. Deploy the Google Apps Script that receives contact form submissions.
+3. Add the credentials and endpoint to `.env.local`:
 
 ```env
-CONTACT_FORM_ACTION_URL=https://formspree.io/f/your-form-id
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY=your-recaptcha-v3-site-key
+RECAPTCHA_SECRET_KEY=your-recaptcha-v3-secret-key
+APPS_SCRIPT_URL=https://script.google.com/macros/s/your-deployment-id/exec
 ```
 
-> Note: This URL is just an endpoint to receive your form submissions. You can use any service of your choice (like Formcarry, Getform, or your own API) if you're not using Formspree.
-
-Make sure the name attributes in your form match what your form handler or service expects (e.g., `name`, `email`, `subject`, `message`).
+Never expose `RECAPTCHA_SECRET_KEY` in a variable prefixed with `NEXT_PUBLIC_`.
 
 ## Configuring Online Images
 
@@ -160,7 +164,9 @@ You can integrate analytics easily:
 Before deploying, add environment variables from .env.local wherever you are deploying:
 
 1. NEXT_PUBLIC_SITE_URL: Set to your actual site URL (e.g., https://johndoe.com).
-1. CONTACT_FORM_ACTION_URL: Your [formspree](https://formspree.io/) url.
+1. NEXT_PUBLIC_RECAPTCHA_SITE_KEY: Your Google reCAPTCHA v3 site key.
+1. RECAPTCHA_SECRET_KEY: Your Google reCAPTCHA v3 secret key.
+1. APPS_SCRIPT_URL: Your deployed Google Apps Script endpoint.
 1. For local development, use the localhost URL.
 
 For any query or suggestion, I am available on [LinkedIn](https://www.linkedin.com/in/abdulbasitprofile/) or email me at basit@codevertiser.com

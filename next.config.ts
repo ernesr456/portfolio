@@ -13,21 +13,8 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'plus.unsplash.com',
-        port: '',
+        hostname: 'img.rocket.new',
         pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'ik.imagekit.io',
-      },
-      {
-        protocol: 'https',
-        hostname: 'res.cloudinary.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'i.pravatar.cc',
       },
     ],
   },

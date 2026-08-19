@@ -1,25 +1,23 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import type { Metadata } from 'next';
+import { DM_Sans } from 'next/font/google';
+import './globals.css';
+import Providers from './providers';
 
-import Footer from '@/components/Footer/Footer'
-import Navbar from '@/components/Navbar/Navbar'
-import ThemeMenu from '@/components/Theme/ThemeMenu'
-import { Fira_Code } from 'next/font/google'
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  variable: '--font-dm-sans',
+});
 
-const firaCode = Fira_Code({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700'] })
-
-const title = 'Ernesto Almario | Full-Stack Developer, Web3 Engineer in the Philippines'
-
+const title = 'Ernesto Almario | Senior Software Engineer & Web3 Technical Lead';
 const description =
-    "Ernesto Almario is a Full-Stack and Web3 Engineer based in the Philippines. He builds scalable web applications and blockchain-powered solutions using React, Next.js, Node.js, and Rust. Let’s build secure, modern digital products together."
-
-const url = process.env.NEXT_PUBLIC_SITE_URL
+  'Senior Software Engineer and Technical Lead building full-stack and Web3 products with Next.js, Angular, NestJS, Laravel, and Rust.';
+const url = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
 export const metadata: Metadata = {
   title,
   description,
   category: 'technology',
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
+  metadataBase: new URL(url),
   alternates: {
     canonical: url,
   },
@@ -29,32 +27,27 @@ export const metadata: Metadata = {
     url,
     siteName: 'Ernesto Portfolio',
     type: 'website',
-    images: './twitter-image.png'
+    images: '/opengraph-image.png',
   },
   twitter: {
     title,
     description,
     card: 'summary_large_image',
     creator: '@AlmarioErn81564',
-    images: './twitter-image.png'
+    images: '/opengraph-image.png',
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="dark">
-      <body className={`${firaCode.className}`}>
-        <header>
-          <Navbar />
-        </header>
-        {children}
-        <ThemeMenu />
-        <Footer />
+    <html lang="en">
+      <body className={dmSans.variable}>
+        <Providers>{children}</Providers>
       </body>
     </html>
-  )
+  );
 }
