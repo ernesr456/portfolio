@@ -128,6 +128,7 @@ export default function HeroSection() {
                 src="https://images.unsplash.com/photo-1623479322729-28b25c16b011"
                 alt="Developer at dual monitors in dark office, blue ambient lighting, focused coding environment"
                 fill
+                sizes="(min-width: 1024px) 22vw, 1px"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 priority />
               
@@ -144,8 +145,8 @@ export default function HeroSection() {
                 src={heroWeb3Engineer}
                 alt="Web3 blockchain network visualization, glowing nodes and connections, dark background, blue and teal light"
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                priority />
+                sizes="(min-width: 1024px) 32vw, 1px"
+                className="object-cover transition-transform duration-700 group-hover:scale-105" />
               
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
               <div className="absolute top-4 left-4 glass-card px-3 py-1.5 rounded-full flex items-center gap-2 border border-border">
@@ -160,6 +161,7 @@ export default function HeroSection() {
                 src={heroPlaceholder}
                 alt="Code editor with colorful syntax highlighting, dark theme, JavaScript or TypeScript code visible"
                 fill
+                sizes="(min-width: 1024px) 18vw, 1px"
                 className="object-cover transition-transform duration-700 group-hover:scale-105" />
               
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />

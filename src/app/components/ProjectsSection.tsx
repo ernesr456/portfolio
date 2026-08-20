@@ -15,6 +15,7 @@ const projects = [
   url: 'https://xgame.live/',
   image: "https://img.rocket.new/generatedImages/rocket_gen_img_14cb9eeb0-1772449226427.png",
   imageAlt: 'Dark gaming platform interface with neon accent lights, digital game environment, moody atmospheric lighting',
+  description: 'A Web3 gaming ecosystem combining player onboarding, an NFT marketplace, and Substrate-based smart contracts in a streamlined consumer experience.',
   accentColor: 'primary' as const,
   stack: ['Next.js', 'NestJS', 'Rust (ink!)', 'Substrate', 'PostgreSQL', 'MongoDB', 'Figma'],
   highlights: [
@@ -35,6 +36,7 @@ const projects = [
   url: 'https://multipayx.net/',
   image: "https://img.rocket.new/generatedImages/rocket_gen_img_1378307c2-1767038173433.png",
   imageAlt: 'Cryptocurrency trading interface with charts and data, dark background, teal and blue neon glow',
+  description: 'A multi-chain cryptocurrency payment gateway that helps merchants accept digital assets, audit transactions, and manage onboarding from a real-time dashboard.',
   accentColor: 'accent' as const,
   stack: ['NestJS', 'Next.js', 'MySQL', 'PostgreSQL', 'Rust (ink!)', 'Polkadot.JS API'],
   highlights: [
@@ -54,6 +56,7 @@ const projects = [
   url: 'https://www.hiro-clinic.or.jp/',
   image: "https://img.rocket.new/generatedImages/rocket_gen_img_1644aff77-1764659451775.png",
   imageAlt: 'Medical diagnostic software interface, clinical dashboard with charts, bright clean white and blue environment',
+  description: 'A clinical portal for processing genetic screening data, generating detailed PDF reports, and presenting diagnostic results through reactive dashboards.',
   accentColor: 'primary' as const,
   stack: ['Angular', 'Vue.js', 'Laravel', 'MySQL'],
   highlights: [
@@ -73,6 +76,7 @@ const projects = [
   url: undefined,
   image: "https://img.rocket.new/generatedImages/rocket_gen_img_12c9ad037-1774654716550.png",
   imageAlt: 'Warehouse management system dashboard, logistics software interface, dark industrial warehouse with organized shelving',
+  description: 'An inventory and logistics suite covering shipment arrivals, warehouse transfers, barcode receiving, and IoT-assisted freight weighing.',
   accentColor: 'accent' as const,
   stack: ['Angular', 'Laravel (PHP)', 'MySQL', 'C# WinForms', 'IoT Integration'],
   highlights: [
@@ -135,6 +139,7 @@ export default function ProjectsSection() {
                 src={project.image}
                 alt={project.imageAlt}
                 fill
+                sizes="(min-width: 768px) 560px, calc(100vw - 32px)"
                 className="object-cover transition-transform duration-700 group-hover:scale-105" />
               
                 <div className="absolute inset-0 bg-gradient-to-t from-card/95 via-card/40 to-transparent" />
@@ -170,6 +175,10 @@ export default function ProjectsSection() {
                   </div>
                   <span className="text-xs text-muted-foreground whitespace-nowrap pt-0.5">{project.duration}</span>
                 </div>
+
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {project.description}
+                </p>
 
                 {/* Tech stack */}
                 <div className="flex flex-wrap gap-1.5">
