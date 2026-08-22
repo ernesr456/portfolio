@@ -1,7 +1,7 @@
-'use client';
+'use client'
 
-import React, { useEffect, useRef } from 'react';
-import Icon from '@/components/UI/AppIcon';
+import React, { useEffect, useRef } from 'react'
+import Icon from '@/components/UI/AppIcon'
 
 const experiences = [
   {
@@ -25,20 +25,21 @@ const experiences = [
   },
   {
     id: 'blockspace',
-    role: 'Senior Software Engineer',
+    role: 'Senior Software Engineer (Web3)',
     company: 'Blockspace Corporation',
     companyUrl: 'https://blockspacecorp.com',
     duration: 'Jul 2023 - Jul 2024',
     period: '1 yr',
     type: 'Full-Time',
-    stack: ['Angular', 'Fastify (Node.js)', 'MySQL', 'Prisma ORM', 'Polkadot APIs'],
+    stack: ['Angular', 'Fastify (Node.js)', 'MySQL', 'Prisma ORM', 'Polkadot APIs', 'Figma'],
     responsibilities: [
-      'Developed high-throughput web apps using Angular, Fastify, MySQL, Prisma ORM, and Polkadot APIs',
+      'Pioneered entry into Web3 engineering by architecting dApps and high-throughput applications integrated with Polkadot APIs',
       'Delivered regular technical status updates and architecture walkthroughs to primary client (RAK SON OPC)',
-      'Designed end-to-end ERDs and relational database schemas tailored to client requirements',
-      'Mentored junior developers through structured code reviews; facilitated Agile/Scrum sprint cycles',
-      'Enforced TDD practices and comprehensive unit testing for high application reliability',
-      'Crafted user flows, wireframes, and UI designs in Figma to align client visions pre-execution',
+      'Led technical walkthroughs, Web3 architecture presentations, and milestone updates for primary client RAK SON OPC',
+      'Designed end-to-end ERDs and relational database schemas optimized for Web3 transaction logging and state tracking',
+      'Mentored junior engineers on Web3 integration patterns, clean code practices, and Agile/Scrum sprint workflows',
+      'Enforced TDD practices and unit testing across API services to guarantee Web3 application reliability and data integrity',
+      'Crafted Web3 user flows, dApp onboarding wireframes, and UI prototypes in Figma to streamline the user experience prior to execution',
     ],
     side: 'right',
   },
@@ -59,135 +60,153 @@ const experiences = [
     ],
     side: 'left',
   },
-];
+]
 
 export default function ExperienceSection() {
-  const sectionRef = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
-    const items = sectionRef?.current?.querySelectorAll<HTMLElement>('.exp-card');
-    if (!items) return;
+    const items = sectionRef?.current?.querySelectorAll<HTMLElement>('.exp-card')
+    if (!items) return
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
+            entry.target.classList.add('visible')
+            observer.unobserve(entry.target)
           }
-        });
+        })
       },
-      { threshold: 0.1 }
-    );
-    items?.forEach((item) => observer?.observe(item));
-    return () => observer?.disconnect();
-  }, []);
+      { threshold: 0.1 },
+    )
+    items?.forEach((item) => observer?.observe(item))
+    return () => observer?.disconnect()
+  }, [])
 
   return (
-    <section ref={sectionRef} id="experience" className="py-20 px-4 sm:px-8 relative">
-      <div className="max-w-6xl mx-auto">
+    <section ref={sectionRef} id="experience" className="relative px-4 py-20 sm:px-8">
+      <div className="mx-auto max-w-6xl">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
+        <div className="mb-14 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <div>
-            <span className="section-label block mb-2">Career History</span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+            <span className="section-label mb-2 block">Career History</span>
+            <h2 className="text-foreground text-3xl font-bold tracking-tight sm:text-4xl">
               Work Experience
             </h2>
           </div>
-          <div className="flex items-center gap-2 glass-card px-4 py-2 rounded-full border border-border self-start sm:self-auto">
+          <div className="glass-card border-border flex items-center gap-2 self-start rounded-full border px-4 py-2 sm:self-auto">
             <Icon name="CalendarDaysIcon" size={14} className="text-primary" />
-            <span className="text-sm font-medium text-muted-foreground">4+ years total</span>
+            <span className="text-muted-foreground text-sm font-medium">4+ years total</span>
           </div>
         </div>
 
         {/* Timeline */}
         <div className="relative">
-          {/* Center line - hidden on mobile */}
-          <div className="hidden md:block timeline-line" />
+          <div className="relative">
+            {/* Center line - hidden on mobile */}
+            <div className="timeline-line hidden md:block" />
 
-          <div className="flex flex-col gap-10">
-            {experiences?.map((exp, index) => (
-              <div
-                key={exp?.id}
-                className={`exp-card fade-slide-up animate-on-scroll relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 ${
-                  exp?.side === 'right' ? 'md:direction-rtl' : ''
-                }`}
-                style={{ transitionDelay: `${index * 120}ms` }}
-              >
-                {/* Center dot - desktop */}
-                <div className="hidden md:flex absolute left-1/2 top-6 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-2 border-background z-10 teal-glow" />
-
-                {/* Card - always left col on mobile; alternates on desktop */}
+            <div className="flex flex-col gap-10">
+              {experiences?.map((exp, index) => (
                 <div
-                  className={`glass-card glass-card-hover rounded-3xl border border-border p-6 flex flex-col gap-4 ${
-                    exp?.side === 'right' ? 'md:col-start-2' : 'md:col-start-1'
+                  key={exp?.id}
+                  className={`exp-card fade-slide-up animate-on-scroll relative grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-10 ${
+                    exp?.side === 'right' ? 'md:direction-rtl' : ''
                   }`}
+                  style={{ transitionDelay: `${index * 120}ms` }}
                 >
-                  {/* Header */}
-                  <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <h3 className="text-base font-bold text-foreground leading-tight">{exp?.role}</h3>
-                      <a
-                        href={exp?.companyUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm font-medium text-primary hover:text-foreground transition-colors flex items-center gap-1 mt-0.5"
-                      >
-                        {exp?.company}
-                        <Icon name="ArrowTopRightOnSquareIcon" size={11} />
-                      </a>
+                  {/* Center dot - desktop */}
+                  <div className="bg-primary border-background teal-glow absolute top-6 left-1/2 z-10 hidden h-4 w-4 -translate-x-1/2 rounded-full border-2 md:flex" />
+
+                  {/* Card - always left col on mobile; alternates on desktop */}
+                  <div
+                    className={`glass-card glass-card-hover border-border flex flex-col gap-4 rounded-3xl border p-6 ${
+                      exp?.side === 'right' ? 'md:col-start-2' : 'md:col-start-1'
+                    }`}
+                  >
+                    {/* Header */}
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <h3 className="text-foreground text-base leading-tight font-bold">
+                          {exp?.role}
+                        </h3>
+                        <a
+                          href={exp?.companyUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:text-foreground mt-0.5 flex items-center gap-1 text-sm font-medium transition-colors"
+                        >
+                          {exp?.company}
+                          <Icon name="ArrowTopRightOnSquareIcon" size={11} />
+                        </a>
+                      </div>
+                      <div className="flex flex-shrink-0 flex-col items-end gap-1">
+                        <span className="text-muted-foreground text-xs font-semibold">
+                          {exp?.duration}
+                        </span>
+                        <span className="tech-chip text-[10px]">{exp?.period}</span>
+                      </div>
                     </div>
-                    <div className="flex flex-col items-end gap-1 flex-shrink-0">
-                      <span className="text-xs font-semibold text-muted-foreground">{exp?.duration}</span>
-                      <span className="tech-chip text-[10px]">{exp?.period}</span>
+
+                    {/* Stack chips */}
+                    <div className="flex flex-wrap gap-1.5">
+                      {exp?.stack?.map((tech) => (
+                        <span
+                          key={tech}
+                          className={`tech-chip ${['Rust (ink!)', 'Substrate', 'Polkadot APIs', 'C# WinForms']?.includes(tech) ? 'tech-chip-purple' : ''}`}
+                        >
+                          {tech}
+                        </span>
+                      ))}
                     </div>
+
+                    {/* Responsibilities */}
+                    <ul className="flex flex-col gap-2">
+                      {exp?.responsibilities?.map((r, i) => (
+                        <li
+                          key={i}
+                          className="text-muted-foreground flex items-start gap-2.5 text-sm leading-relaxed"
+                        >
+                          <span className="bg-primary/60 mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full" />
+                          {r}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
 
-                  {/* Stack chips */}
-                  <div className="flex flex-wrap gap-1.5">
-                    {exp?.stack?.map((tech) => (
-                      <span
-                        key={tech}
-                        className={`tech-chip ${['Rust (ink!)', 'Substrate', 'Polkadot APIs', 'C# WinForms']?.includes(tech) ? 'tech-chip-purple' : ''}`}
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Responsibilities */}
-                  <ul className="flex flex-col gap-2">
-                    {exp?.responsibilities?.map((r, i) => (
-                      <li key={i} className="flex items-start gap-2.5 text-sm text-muted-foreground leading-relaxed">
-                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/60 flex-shrink-0" />
-                        {r}
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Spacer for the other column - desktop only */}
+                  {exp?.side === 'left' && <div className="hidden md:col-start-2 md:block" />}
+                  {exp?.side === 'right' && (
+                    <div className="hidden md:col-start-1 md:row-start-1 md:block" />
+                  )}
                 </div>
-
-                {/* Spacer for the other column - desktop only */}
-                {exp?.side === 'left' && <div className="hidden md:block md:col-start-2" />}
-                {exp?.side === 'right' && <div className="hidden md:block md:col-start-1 md:row-start-1" />}
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           {/* Education card */}
-          <div className="mt-10 exp-card fade-slide-up animate-on-scroll" style={{ transitionDelay: '360ms' }}>
-            <div className="relative md:w-1/2 mx-auto glass-card rounded-3xl border border-border p-6 flex items-start gap-4">
-              <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center flex-shrink-0">
+          <div
+            className="exp-card fade-slide-up animate-on-scroll mt-10"
+            style={{ transitionDelay: '360ms' }}
+          >
+            <div className="glass-card border-border relative mx-auto flex items-start gap-4 rounded-3xl border p-6 md:w-1/2">
+              <div className="bg-accent/10 border-accent/20 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl border">
                 <Icon name="AcademicCapIcon" size={18} className="text-accent" />
               </div>
               <div>
                 <p className="section-label mb-1">Education</p>
-                <h3 className="text-base font-bold text-foreground">BS Information Technology</h3>
-                <p className="text-sm text-muted-foreground mt-0.5">Cebu Eastern College &middot; 2015 - 2019</p>
-                <p className="text-xs text-muted-foreground mt-1">Leon Kilat St., Cebu City, Philippines</p>
+                <h3 className="text-foreground text-base font-bold">BS Information Technology</h3>
+                <p className="text-muted-foreground mt-0.5 text-sm">
+                  Cebu Eastern College &middot; 2015 - 2019
+                </p>
+                <p className="text-muted-foreground mt-1 text-xs">
+                  Leon Kilat St., Cebu City, Philippines
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }

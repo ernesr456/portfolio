@@ -70,7 +70,7 @@ export default function HeroSection() {
 
           {/* Summary */}
           <p className="text-base font-light leading-relaxed text-muted-foreground max-w-md">
-            4+ years building high-performance Web3 platforms and full-stack systems - from Rust ink! smart contracts on Substrate to Angular/Next.js frontends - while leading cross-functional engineering teams.
+            4+ years of full-stack experience, with the last 2 years dedicated to Web3. I build high-performance platforms, Rust ink! smart contracts on Substrate, and modern frontends while leading engineering teams.
           </p>
 
           {/* Tech chips */}
@@ -174,7 +174,7 @@ export default function HeroSection() {
                   <path id="heroCirclePath" d="M 50 7 A 43 43 0 1 1 49.9 7" fill="none" />
                   <text fontSize="7" fontWeight="700" letterSpacing="1.5" fill="currentColor">
                     <textPath href="#heroCirclePath" startOffset="50%" textAnchor="middle">
-                      FULL-STACK &bull; WEB3 &bull; LEAD &bull;
+                      FULL STACK &bull; DAPPS &bull; RUST &bull; SMART CONTRACT &bull; BUILD &bull;
                     </textPath>
                   </text>
                 </svg>
