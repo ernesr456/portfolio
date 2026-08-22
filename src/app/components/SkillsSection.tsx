@@ -78,17 +78,17 @@ const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    label: 'AI & Operations',
-    icon: 'UsersIcon',
+    label: 'AI & Productivity Tools',
+    icon: 'CpuChipIcon',
     skills: [
-      { name: 'Documentation', level: 4 },
-      { name: 'Git / GitHub', level: 4 },
-      { name: 'Collaboration', level: 4 },
-      { name: 'Agile / Scrum', level: 3 },
-      { name: 'Project Planning', level: 3 },
-      { name: 'Decision-making', level: 3 },
+      { name: 'Gemini AI', level: 3 },
+      { name: 'GitHub Copilot Chat', level: 3 },
+      { name: 'Technical Documentation', level: 4 },
+      { name: 'Code Refactoring', level: 4 },
+      { name: 'Automated Unit Testing', level: 3 },
+      { name: 'Debugging & Optimization', level: 4 },
     ],
-  },
+  }
 ];
 
 function SkillDots({ level, max = 5 }: { level: number; max?: number }) {
