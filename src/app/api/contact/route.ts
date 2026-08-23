@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
 const RECAPTCHA_ACTION = 'contact_submit';
 const MIN_RECAPTCHA_SCORE = 0.5;
