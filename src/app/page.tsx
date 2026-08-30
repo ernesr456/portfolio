@@ -1,13 +1,13 @@
-import React from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import HeroSection from '@/app/components/HeroSection';
-import ProjectsSection from '@/app/components/ProjectsSection';
-import SkillsSection from '@/app/components/SkillsSection';
-import ExperienceSection from '@/app/components/ExperienceSection';
-import ContactSection from '@/app/components/ContactSection';
+import React from 'react'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import HeroSection from '@/app/components/HeroSection'
+import ProjectsSection from '@/app/components/ProjectsSection'
+import SkillsSection from '@/app/components/SkillsSection'
+import ExperienceSection from '@/app/components/ExperienceSection'
+import ContactSection from '@/app/components/ContactSection'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -18,7 +18,7 @@ const structuredData = {
       url: siteUrl,
       name: 'Ernesto Almario | Senior Software Engineer & Web3 Technical Lead',
       description:
-        'Portfolio of Ernesto Almario, a Senior Software Engineer and Web3 Technical Lead building full-stack products and blockchain systems.',
+        'Portfolio of Ernesto Almario, a Senior Software Engineer and Web3 Technical Lead building full-stack products, blockchain systems, and reliable cloud platforms.',
       mainEntity: {
         '@id': `${siteUrl}/#person`,
       },
@@ -31,7 +31,7 @@ const structuredData = {
       image: `${siteUrl}/opengraph-image.png`,
       jobTitle: ['Senior Software Engineer', 'Web3 Technical Lead'],
       description:
-        'Senior Software Engineer and Web3 Technical Lead specializing in Next.js, Angular, NestJS, Laravel, Rust, and Substrate.',
+        'Senior Software Engineer and Web3 Technical Lead specializing in Next.js, Angular, NestJS, Laravel, Rust, Substrate, and cloud platform operations.',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Cebu City',
@@ -47,11 +47,18 @@ const structuredData = {
         'Rust',
         'Substrate',
         'Smart contracts',
+        'Cloud infrastructure',
+        'Technical leadership',
+        'Mobile application quality assurance',
       ],
-      sameAs: ['https://x.com/AlmarioErn81564'],
+      sameAs: [
+        'https://github.com/ernesr456',
+        'https://www.linkedin.com/in/ernesto-almario-jr-4a9162191/',
+        'https://x.com/AlmarioErn81564',
+      ],
     },
   ],
-};
+}
 
 export default function HomePage() {
   return (
@@ -62,7 +69,7 @@ export default function HomePage() {
           __html: JSON.stringify(structuredData).replace(/</g, '\\u003c'),
         }}
       />
-      <main className="min-h-screen bg-background overflow-x-hidden">
+      <main className="bg-background min-h-screen overflow-x-hidden">
         <Header />
         <HeroSection />
         <ProjectsSection />
@@ -72,5 +79,5 @@ export default function HomePage() {
         <Footer />
       </main>
     </>
-  );
+  )
 }

@@ -5,6 +5,25 @@ import Icon from '@/components/UI/AppIcon'
 
 const experiences = [
   {
+    id: 'fizzbuzz',
+    role: 'Sr. Software Engineer (Freelance)',
+    company: 'FizzBuzz PH',
+    companyUrl: 'https://www.fizzbuzz.ph',
+    duration: 'Mar 2025 - Present',
+    period: 'Ongoing',
+    type: 'Freelance',
+    stack: ['AWS', 'Bluehost', 'Firebase', 'WordPress', 'DNS', 'Unity QA'],
+    responsibilities: [
+      'Monitor and maintain cloud infrastructure, hosting environments, server health, and database operations across AWS, Bluehost, and Firebase',
+      'Administer enterprise domains and DNS across GoDaddy and Network Solutions, ensuring reliable routing, renewals, and secure access',
+      'Audit Apple App Store Connect and Google Play Console accounts for stability, compliance alerts, and crash reports',
+      'Maintain WordPress infrastructure through security patches, catalog updates, and third-party API integrations',
+      'Build internal QR code, barcode generation, and product asset tracking utilities',
+      'Perform cross-platform QA for Unity mobile applications on iOS and Android, documenting performance and release issues',
+    ],
+    side: 'left',
+  },
+  {
     id: 'rakson-manager',
     role: 'Platform Engineer Manager (Web3)',
     company: 'RAK SON OPC',
@@ -21,7 +40,7 @@ const experiences = [
       'Standardized modular monolith boundary patterns, ERDs, and domain contracts across projects',
       'Engineered Angular/Next.js frontends + NestJS backends + Rust ink! smart contracts on Substrate',
     ],
-    side: 'left',
+    side: 'right',
   },
   {
     id: 'blockspace',
@@ -41,7 +60,7 @@ const experiences = [
       'Enforced TDD practices and unit testing across API services to guarantee Web3 application reliability and data integrity',
       'Crafted Web3 user flows, dApp onboarding wireframes, and UI prototypes in Figma to streamline the user experience prior to execution',
     ],
-    side: 'right',
+    side: 'left',
   },
   {
     id: 'humanincubator',
@@ -58,7 +77,7 @@ const experiences = [
       'Translated product requirements into interactive wireframes and high-fidelity Figma prototypes',
       'Authored comprehensive automated unit tests in Agile environment, reducing production defects',
     ],
-    side: 'left',
+    side: 'right',
   },
 ]
 
@@ -153,7 +172,7 @@ export default function ExperienceSection() {
                       {exp?.stack?.map((tech) => (
                         <span
                           key={tech}
-                          className={`tech-chip ${['Rust (ink!)', 'Substrate', 'Polkadot APIs', 'C# WinForms']?.includes(tech) ? 'tech-chip-purple' : ''}`}
+                          className={`tech-chip ${['Rust (ink!)', 'Substrate', 'Polkadot APIs', 'C# WinForms', 'Unity QA']?.includes(tech) ? 'tech-chip-purple' : ''}`}
                         >
                           {tech}
                         </span>
@@ -187,7 +206,7 @@ export default function ExperienceSection() {
           {/* Education card */}
           <div
             className="exp-card fade-slide-up animate-on-scroll mt-10"
-            style={{ transitionDelay: '360ms' }}
+            style={{ transitionDelay: '480ms' }}
           >
             <div className="glass-card border-border relative mx-auto flex items-start gap-4 rounded-3xl border p-6 md:w-1/2">
               <div className="bg-accent/10 border-accent/20 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl border">

@@ -1,10 +1,10 @@
-'use client';
+'use client'
 
-import React, { useState, useEffect, useRef } from 'react';
-import Icon from '@/components/UI/AppIcon';
+import React, { useState, useEffect, useRef } from 'react'
+import Icon from '@/components/UI/AppIcon'
 
-type SkillItem = { name: string; level: number };
-type SkillCategory = { label: string; icon: string; skills: SkillItem[] };
+type SkillItem = { name: string; level: number }
+type SkillCategory = { label: string; icon: string; skills: SkillItem[] }
 
 const skillCategories: SkillCategory[] = [
   {
@@ -28,6 +28,7 @@ const skillCategories: SkillCategory[] = [
       { name: 'Fastify (Node.JS)', level: 3 },
       { name: 'Rust', level: 3 },
       { name: 'C#', level: 2 },
+      { name: 'C++', level: 2 },
       { name: 'Java', level: 2 },
     ],
   },
@@ -50,7 +51,21 @@ const skillCategories: SkillCategory[] = [
       { name: 'Prisma ORM', level: 4 },
       { name: 'MariaDB (MySQL)', level: 4 },
       { name: 'MongoDB (NoSQL)', level: 3 },
+      { name: 'Mongoose', level: 3 },
       { name: 'PostgreSQL', level: 3 },
+      { name: 'Supabase', level: 3 },
+    ],
+  },
+  {
+    label: 'Cloud & Platforms',
+    icon: 'CloudIcon',
+    skills: [
+      { name: 'AWS / Amazon S3', level: 3 },
+      { name: 'Firebase', level: 3 },
+      { name: 'Vercel', level: 4 },
+      { name: 'Bluehost / WordPress', level: 3 },
+      { name: 'Domain & DNS Administration', level: 3 },
+      { name: 'CI/CD Workflows', level: 3 },
     ],
   },
   {
@@ -61,6 +76,7 @@ const skillCategories: SkillCategory[] = [
       { name: 'Manual Testing', level: 4 },
       { name: 'Debugging', level: 4 },
       { name: 'Unit Testing', level: 3 },
+      { name: 'Mobile App & Unity QA', level: 3 },
       { name: 'Canva', level: 3 },
       { name: 'Adobe Photoshop', level: 2 },
     ],
@@ -74,6 +90,7 @@ const skillCategories: SkillCategory[] = [
       { name: 'Collaboration', level: 4 },
       { name: 'Agile / Scrum', level: 3 },
       { name: 'Project Planning', level: 3 },
+      { name: 'Budgeting & Coordination', level: 3 },
       { name: 'Decision-making', level: 3 },
     ],
   },
@@ -88,8 +105,8 @@ const skillCategories: SkillCategory[] = [
       { name: 'Automated Unit Testing', level: 3 },
       { name: 'Debugging & Optimization', level: 4 },
     ],
-  }
-];
+  },
+]
 
 function SkillDots({ level, max = 5 }: { level: number; max?: number }) {
   return (
@@ -98,61 +115,62 @@ function SkillDots({ level, max = 5 }: { level: number; max?: number }) {
         <span key={i} className={i < level ? 'dot-filled' : 'dot-empty'} />
       ))}
     </div>
-  );
+  )
 }
 
 export default function SkillsSection() {
-  const [activeTab, setActiveTab] = useState(0);
-  const sectionRef = useRef<HTMLElement>(null);
+  const [activeTab, setActiveTab] = useState(0)
+  const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
-    const el = sectionRef.current;
-    if (!el) return;
+    const el = sectionRef.current
+    if (!el) return
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             el.querySelectorAll<HTMLElement>('.skill-row').forEach((row, i) => {
-              setTimeout(() => row.classList.add('visible'), i * 50);
-            });
-            observer.unobserve(el);
+              setTimeout(() => row.classList.add('visible'), i * 50)
+            })
+            observer.unobserve(el)
           }
-        });
+        })
       },
-      { threshold: 0.1 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [activeTab]);
+      { threshold: 0.1 },
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [activeTab])
 
-  const active = skillCategories[activeTab];
+  const active = skillCategories[activeTab]
 
   return (
-    <section ref={sectionRef} id="skills" className="py-20 px-4 sm:px-8 relative">
-      <div className="max-w-6xl mx-auto">
+    <section ref={sectionRef} id="skills" className="relative px-4 py-20 sm:px-8">
+      <div className="mx-auto max-w-6xl">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+        <div className="mb-10 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <div>
-            <span className="section-label block mb-2">Technical Proficiency</span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+            <span className="section-label mb-2 block">Technical Proficiency</span>
+            <h2 className="text-foreground text-3xl font-bold tracking-tight sm:text-4xl">
               Skills & Stack
             </h2>
           </div>
-          <p className="text-sm text-muted-foreground max-w-xs">
-            Proficiency rated 1-5 across 6 engineering domains.
+          <p className="text-muted-foreground max-w-xs text-sm">
+            Proficiency rated 1-5 across {skillCategories.length} engineering domains.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           {/* Tab navigation - left column on desktop */}
-          <div className="lg:col-span-1 flex flex-row lg:flex-col gap-2 overflow-x-auto pb-1 lg:pb-0 lg:overflow-visible">
+          <div className="flex flex-row gap-2 overflow-x-auto pb-1 lg:col-span-1 lg:flex-col lg:overflow-visible lg:pb-0">
             {skillCategories.map((cat, i) => (
               <button
                 key={cat.label}
                 onClick={() => setActiveTab(i)}
-                className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-200 whitespace-nowrap border ${
+                className={`flex items-center gap-3 rounded-xl border px-4 py-3 text-sm font-semibold whitespace-nowrap transition-all duration-200 ${
                   activeTab === i
-                    ? 'bg-primary/10 border-primary/30 text-primary teal-glow' :'glass-card border-border text-muted-foreground hover:text-foreground hover:border-primary/20'
+                    ? 'bg-primary/10 border-primary/30 text-primary teal-glow'
+                    : 'glass-card border-border text-muted-foreground hover:text-foreground hover:border-primary/20'
                 }`}
               >
                 <Icon name={cat.icon as Parameters<typeof Icon>[0]['name']} size={16} />
@@ -162,14 +180,18 @@ export default function SkillsSection() {
           </div>
 
           {/* Skills panel - right 2 cols */}
-          <div className="lg:col-span-2 glass-card rounded-3xl border border-border p-6">
-            <div className="flex items-center gap-3 mb-6 pb-4 border-b border-border">
-              <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
-                <Icon name={active.icon as Parameters<typeof Icon>[0]['name']} size={18} className="text-primary" />
+          <div className="glass-card border-border rounded-3xl border p-6 lg:col-span-2">
+            <div className="border-border mb-6 flex items-center gap-3 border-b pb-4">
+              <div className="bg-primary/10 border-primary/20 flex h-10 w-10 items-center justify-center rounded-xl border">
+                <Icon
+                  name={active.icon as Parameters<typeof Icon>[0]['name']}
+                  size={18}
+                  className="text-primary"
+                />
               </div>
               <div>
-                <h3 className="text-base font-bold text-foreground">{active.label}</h3>
-                <p className="text-xs text-muted-foreground">{active.skills.length} skills</p>
+                <h3 className="text-foreground text-base font-bold">{active.label}</h3>
+                <p className="text-muted-foreground text-xs">{active.skills.length} skills</p>
               </div>
             </div>
 
@@ -177,23 +199,31 @@ export default function SkillsSection() {
               {active.skills.map((skill, i) => (
                 <div
                   key={skill.name}
-                  className="skill-row fade-slide-up animate-on-scroll flex items-center justify-between py-2.5 px-3 rounded-xl hover:bg-muted/40 transition-colors"
+                  className="skill-row fade-slide-up animate-on-scroll hover:bg-muted/40 flex items-center justify-between rounded-xl px-3 py-2.5 transition-colors"
                   style={{ transitionDelay: `${i * 50}ms` }}
                 >
-                  <span className="text-sm font-medium text-foreground">{skill.name}</span>
+                  <span className="text-foreground text-sm font-medium">{skill.name}</span>
                   <SkillDots level={skill.level} />
                 </div>
               ))}
             </div>
 
             {/* Legend */}
-            <div className="mt-5 pt-4 border-t border-border flex items-center gap-4 flex-wrap">
-              <span className="text-xs text-muted-foreground">Proficiency:</span>
+            <div className="border-border mt-5 flex flex-wrap items-center gap-4 border-t pt-4">
+              <span className="text-muted-foreground text-xs">Proficiency:</span>
               {[1, 2, 3, 4, 5].map((n) => (
                 <div key={n} className="flex items-center gap-1.5">
                   <SkillDots level={n} max={5} />
-                  <span className="text-xs text-muted-foreground">
-                    {n === 1 ? 'Basic' : n === 2 ? 'Familiar' : n === 3 ? 'Proficient' : n === 4 ? 'Advanced' : 'Expert'}
+                  <span className="text-muted-foreground text-xs">
+                    {n === 1
+                      ? 'Basic'
+                      : n === 2
+                        ? 'Familiar'
+                        : n === 3
+                          ? 'Proficient'
+                          : n === 4
+                            ? 'Advanced'
+                            : 'Expert'}
                   </span>
                 </div>
               ))}
@@ -202,5 +232,5 @@ export default function SkillsSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }

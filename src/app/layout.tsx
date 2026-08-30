@@ -1,17 +1,17 @@
-import type { Metadata } from 'next';
-import { DM_Sans } from 'next/font/google';
-import './globals.css';
-import Providers from './providers';
+import type { Metadata } from 'next'
+import { DM_Sans } from 'next/font/google'
+import './globals.css'
+import Providers from './providers'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-dm-sans',
-});
+})
 
-const title = 'Ernesto Almario | Senior Software Engineer & Web3 Technical Lead';
+const title = 'Ernesto Almario | Senior Software Engineer & Web3 Technical Lead'
 const description =
-  'Senior Software Engineer and Technical Lead building full-stack and Web3 products with Next.js, Angular, NestJS, Laravel, and Rust.';
-const url = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  'Senior Software Engineer and Technical Lead building full-stack, Web3, and cloud platforms with Next.js, Angular, NestJS, Laravel, Rust, and AWS.'
+const url = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
 
 export const metadata: Metadata = {
   title,
@@ -29,6 +29,8 @@ export const metadata: Metadata = {
     'Technical Lead',
     'Next.js Developer',
     'Rust Developer',
+    'Cloud Platform Engineer',
+    'AWS',
     'Cebu City Software Engineer',
   ],
   verification: {
@@ -74,12 +76,12 @@ export const metadata: Metadata = {
       alt: 'Ernesto Almario - Senior Software Engineer and Web3 Technical Lead',
     },
   },
-};
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en">
@@ -87,5 +89,5 @@ export default function RootLayout({
         <Providers>{children}</Providers>
       </body>
     </html>
-  );
+  )
 }
