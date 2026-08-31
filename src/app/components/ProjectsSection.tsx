@@ -46,7 +46,7 @@ const projects = [
     description:
       'A multi-chain cryptocurrency payment gateway that helps merchants accept digital assets, audit transactions, and manage onboarding from a real-time dashboard.',
     accentColor: 'accent' as const,
-    stack: ['WordPress', 'Elementor', 'PHP', 'JavaScript', 'jQuery', 'Yoast SEO'],
+    stack: ['Next.js', 'NestJS', 'TailwindCSS', 'AWS', 'PostgreSQL', 'MongoDB', 'Figma'],
     highlights: [
       'Engineered multi-chain crypto merchant payment system with near-instant finality',
       'Deployed Substrate ink! smart contracts for on-chain transaction verification',
