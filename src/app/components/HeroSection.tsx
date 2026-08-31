@@ -72,7 +72,7 @@ export default function HeroSection() {
 
           {/* Summary */}
           <p className="text-muted-foreground max-w-md text-base leading-relaxed font-light">
-            Technical lead and senior full-stack engineer with 4+ years of experience building
+            Full-stack engineer with 5 years of experience building
             high-performance applications, modular platforms, Web3 systems, and reliable cloud
             infrastructure while guiding cross-functional teams.
           </p>
@@ -107,20 +107,20 @@ export default function HeroSection() {
               View My Work
               <Icon name="ArrowDownIcon" size={14} className="text-primary" />
             </a>
-            <a
+            {/* <a
               href="/Ernesto-Almario-CV.pdf"
               download
               className="glass-card border-border text-foreground hover:border-primary/40 flex items-center justify-center gap-2 rounded-xl border px-7 py-3 text-sm font-semibold transition-all duration-200"
             >
               <Icon name="DocumentArrowDownIcon" size={16} className="text-primary" />
               Download CV
-            </a>
+            </a> */}
           </div>
 
           {/* Social proof row */}
           <div className="border-border flex items-center gap-5 border-t pt-2">
             <div className="flex flex-col gap-0.5">
-              <span className="text-foreground text-xl font-bold">4+</span>
+              <span className="text-foreground text-xl font-bold">5</span>
               <span className="text-muted-foreground text-xs">Years exp.</span>
             </div>
             <div className="bg-border h-8 w-px" />

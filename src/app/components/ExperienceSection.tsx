@@ -115,7 +115,7 @@ export default function ExperienceSection() {
           </div>
           <div className="glass-card border-border flex items-center gap-2 self-start rounded-full border px-4 py-2 sm:self-auto">
             <Icon name="CalendarDaysIcon" size={14} className="text-primary" />
-            <span className="text-muted-foreground text-sm font-medium">4+ years total</span>
+            <span className="text-muted-foreground text-sm font-medium">5 years total</span>
           </div>
         </div>
 

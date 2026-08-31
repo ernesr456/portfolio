@@ -18,24 +18,6 @@ const contactInfo = [
     href: 'tel:+639763150504',
   },
   {
-    icon: 'GlobeAltIcon',
-    label: 'Website',
-    value: 'ernestoalmario.com',
-    href: 'https://www.ernestoalmario.com',
-  },
-  {
-    icon: 'CodeBracketIcon',
-    label: 'GitHub',
-    value: 'github.com/ernesr456',
-    href: 'https://github.com/ernesr456',
-  },
-  {
-    icon: 'BriefcaseIcon',
-    label: 'LinkedIn',
-    value: 'Ernesto Almario Jr.',
-    href: 'https://www.linkedin.com/in/ernesto-almario-jr-4a9162191/',
-  },
-  {
     icon: 'MapPinIcon',
     label: 'Location',
     value: 'Inayawan, Cebu City, Philippines',
