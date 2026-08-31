@@ -6,6 +6,7 @@ import Icon from '@/components/UI/AppIcon'
 import multiPayXImage from '@/assets/images/MultiPayX.png'
 import xGameImage from '@/assets/images/XGame.png'
 import NIPTImage from '@/assets/images/NIPT.png'
+import HogWildToysImage from '@/assets/images/HogWildToys.png'
 
 const projects = [
   {
@@ -37,7 +38,7 @@ const projects = [
     subtitle: 'Crypto Payment Gateway & Exchange',
     company: 'Rak Son OPC',
     duration: 'Sep 2025 - Nov 2025',
-    role: 'Senior Software Engineer',
+    role: 'Sr. Software Engineer',
     url: 'https://multipayx.net',
     image: multiPayXImage,
     imageAlt:
@@ -45,11 +46,33 @@ const projects = [
     description:
       'A multi-chain cryptocurrency payment gateway that helps merchants accept digital assets, audit transactions, and manage onboarding from a real-time dashboard.',
     accentColor: 'accent' as const,
-    stack: ['NestJS', 'Next.js', 'MySQL', 'PostgreSQL', 'Rust (ink!)', 'Polkadot.JS API'],
+    stack: ['WordPress', 'Elementor', 'PHP', 'JavaScript', 'jQuery', 'Yoast SEO'],
     highlights: [
       'Engineered multi-chain crypto merchant payment system with near-instant finality',
       'Deployed Substrate ink! smart contracts for on-chain transaction verification',
       'Built real-time admin dashboards for transaction auditing and merchant onboarding',
+    ],
+    featured: true,
+  },
+  {
+    id: 'hogwildtoys',
+    name: 'Hog Wild Toys',
+    subtitle: 'Wordpress Toy Brand Website.',
+    company: 'Fizzbuzz PH',
+    duration: 'Sep 2025 - Nov 2025',
+    role: 'Sr. Software Engineer',
+    url: 'https://hogwildtoys.com',
+    image: HogWildToysImage,
+    imageAlt:
+      'Hog Wild Toys WordPress storefront featuring colorful toys, product collections, and promotional content',
+    description:
+      'A WordPress-powered e-commerce website showcasing playful toy collections through a responsive storefront, updated product content, and integrated online shopping features.',
+    accentColor: 'accent' as const,
+    stack: ['Wordpress', 'Elementor', 'PHP', 'JavaScript', 'JQuery', 'Yoast SEO'],
+    highlights: [
+      'Maintained the WordPress storefront, plugins, themes, and production hosting environment',
+      'Managed product catalog updates, promotional content, and responsive page layouts',
+      'Applied security patches and supported third-party e-commerce and API integrations',
     ],
     featured: true,
   },
