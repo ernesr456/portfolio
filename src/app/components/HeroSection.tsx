@@ -125,7 +125,7 @@ export default function HeroSection() {
             </div>
             <div className="bg-border h-8 w-px" />
             <div className="flex flex-col gap-0.5">
-              <span className="text-foreground text-xl font-bold">4</span>
+              <span className="text-foreground text-xl font-bold">5</span>
               <span className="text-muted-foreground text-xs">Shipped products</span>
             </div>
             <div className="bg-border h-8 w-px" />

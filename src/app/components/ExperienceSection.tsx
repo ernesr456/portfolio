@@ -6,7 +6,7 @@ import Icon from '@/components/UI/AppIcon'
 const experiences = [
   {
     id: 'fizzbuzz',
-    role: 'Sr. Software Engineer (Freelance)',
+    role: 'Sr. Software Engineer',
     company: 'FizzBuzz PH',
     companyUrl: 'https://www.fizzbuzz.ph',
     duration: 'Mar 2025 - Present',
@@ -163,7 +163,16 @@ export default function ExperienceSection() {
                         <span className="text-muted-foreground text-xs font-semibold">
                           {exp?.duration}
                         </span>
-                        <span className="tech-chip text-[10px]">{exp?.period}</span>
+                        <div className="flex flex-wrap justify-end gap-1.5">
+                          <span className="tech-chip text-[10px]">{exp?.period}</span>
+                          <span
+                            className={`tech-chip text-[10px] ${
+                              exp?.type === 'Freelance' ? 'tech-chip-purple' : ''
+                            }`}
+                          >
+                            {exp?.type}
+                          </span>
+                        </div>
                       </div>
                     </div>
 

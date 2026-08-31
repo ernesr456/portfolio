@@ -167,7 +167,7 @@ export default function SkillsSection() {
               <button
                 key={cat.label}
                 onClick={() => setActiveTab(i)}
-                className={`flex items-center gap-3 rounded-xl border px-4 py-3 text-sm font-semibold whitespace-nowrap transition-all duration-200 ${
+                className={`flex items-center cursor-pointer gap-3 rounded-xl border px-4 py-3 text-sm font-semibold whitespace-nowrap transition-all duration-200 ${
                   activeTab === i
                     ? 'bg-primary/10 border-primary/30 text-primary teal-glow'
                     : 'glass-card border-border text-muted-foreground hover:text-foreground hover:border-primary/20'
