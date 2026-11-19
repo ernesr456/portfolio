@@ -24,13 +24,14 @@ export const metadata: Metadata = {
   publisher: 'Ernesto Almario',
   keywords: [
     'Ernesto Almario',
-    'Senior Software Engineer',
+    'Software Engineer',
     'Web3 Engineer',
     'Technical Lead',
     'Next.js Developer',
     'Rust Developer',
     'Cloud Platform Engineer',
     'AWS',
+    'AI Engineer',
     'Cebu City Software Engineer',
   ],
   verification: {

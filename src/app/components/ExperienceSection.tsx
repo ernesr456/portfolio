@@ -39,6 +39,7 @@ const experiences = [
       'Managed end-to-end project planning, resource mapping, and budget allocation for executive stakeholders',
       'Standardized modular monolith boundary patterns, ERDs, and domain contracts across projects',
       'Engineered Angular/Next.js frontends + NestJS backends + Rust ink! smart contracts on Substrate',
+      'Integrated LLM-powered AI assistants and chatbots for player and merchant support',
     ],
     side: 'right',
   },

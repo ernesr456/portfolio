@@ -23,12 +23,13 @@ const projects = [
     description:
       'A Web3 gaming ecosystem combining player onboarding, an NFT marketplace, and Substrate-based smart contracts in a streamlined consumer experience.',
     accentColor: 'primary' as const,
-    stack: ['Next.js', 'NestJS', 'Rust (ink!)', 'Substrate', 'PostgreSQL', 'MongoDB', 'Figma'],
+    stack: ['Next.js', 'NestJS', 'Rust (ink!)', 'Substrate', 'PostgreSQL', 'MongoDB', 'LLM APIs', 'Figma'],
     highlights: [
       'Led full product lifecycle across Engineering and Marketing teams',
       'Architected zero-gas NFT Marketplace eliminating Web3 onboarding friction',
       'Deployed Rust-based ink! smart contracts on Substrate with dual DB layers',
       'Designed end-to-end user journeys and high-fidelity interfaces in Figma',
+      'Integrated an interactive LLM-powered AI assistant for real-time player support, Web3 onboarding, and knowledge retrieval',
     ],
     featured: true,
   },
@@ -46,11 +47,12 @@ const projects = [
     description:
       'A multi-chain cryptocurrency payment gateway that helps merchants accept digital assets, audit transactions, and manage onboarding from a real-time dashboard.',
     accentColor: 'accent' as const,
-    stack: ['Next.js', 'NestJS', 'TailwindCSS', 'AWS', 'PostgreSQL', 'MongoDB', 'Figma'],
+    stack: ['Next.js', 'NestJS', 'MySQL', 'PostgreSQL', 'Rust (ink!)', 'Substrate', 'Polkadot.JS API', 'LLM'],
     highlights: [
       'Engineered multi-chain crypto merchant payment system with near-instant finality',
       'Deployed Substrate ink! smart contracts for on-chain transaction verification',
       'Built real-time admin dashboards for transaction auditing and merchant onboarding',
+      'Integrated an LLM chatbot with structured prompts, guardrails, and fallback handling',
     ],
     featured: true,
   },

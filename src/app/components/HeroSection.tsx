@@ -66,20 +66,18 @@ export default function HeroSection() {
               <span className="text-gradient-teal">Almario</span>
             </h1>
             <p className="text-muted-foreground text-lg font-medium tracking-wide">
-              Senior Software Engineer <span className="text-border">&middot;</span> Web3 Engineer
+              Software Engineer <span className="text-border">&middot;</span> Web3 Engineer <span className="text-border">&middot;</span> AI Engineer
             </p>
           </div>
 
           {/* Summary */}
           <p className="text-muted-foreground max-w-md text-base leading-relaxed font-light">
-            Full-stack engineer with 5 years of experience building
-            high-performance applications, modular platforms, Web3 systems, and reliable cloud
-            infrastructure while guiding cross-functional teams.
+            Senior Software Engineer and Technical Lead with nearly 5 years of experience architecting scalable web applications, modular monolith systems, and Web3 platforms. Experienced across the full SDLC—leading cross-functional teams, designing Figma UI/UX prototypes, building NestJS, Next.js, and Angular platforms, integrating LLM APIs and AI assistants, and engineering Rust-based ink! smart contracts on Substrate. Combines strong engineering standards and cloud/platform operations with practical Web2 and Web3 product delivery.
           </p>
 
           {/* Tech chips */}
           <div className="flex flex-wrap gap-2">
-            {['Angular', 'Next.js', 'NestJS', 'Rust (ink!)', 'Laravel', 'AWS', 'Web3'].map(
+            {['Angular', 'Next.js', 'NestJS', 'Rust (ink!)', 'Laravel', 'AWS', 'Web3', 'LLM', 'AI'].map(
               (tech) => (
                 <span
                   key={tech}
@@ -107,14 +105,14 @@ export default function HeroSection() {
               View My Work
               <Icon name="ArrowDownIcon" size={14} className="text-primary" />
             </a>
-            {/* <a
+            <a
               href="/Ernesto-Almario-CV.pdf"
               download
               className="glass-card border-border text-foreground hover:border-primary/40 flex items-center justify-center gap-2 rounded-xl border px-7 py-3 text-sm font-semibold transition-all duration-200"
             >
               <Icon name="DocumentArrowDownIcon" size={16} className="text-primary" />
               Download CV
-            </a> */}
+            </a>
           </div>
 
           {/* Social proof row */}

@@ -4,6 +4,7 @@ const PROJECT_URLS = {
   xgame: 'https://xgame.live/',
   multipayx: 'https://multipayx.net/',
   nipt: 'https://www.hiro-clinic.or.jp/',
+  hogwildtoys: 'https://hogwildtoys.com/',
 } as const
 
 async function isWebsiteOnline(url: string): Promise<boolean> {

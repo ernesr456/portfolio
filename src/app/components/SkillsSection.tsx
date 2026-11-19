@@ -30,6 +30,7 @@ const skillCategories: SkillCategory[] = [
       { name: 'C#', level: 2 },
       { name: 'C++', level: 2 },
       { name: 'Java', level: 2 },
+      { name: 'Python', level: 2 },
     ],
   },
   {
@@ -54,6 +55,18 @@ const skillCategories: SkillCategory[] = [
       { name: 'Mongoose', level: 3 },
       { name: 'PostgreSQL', level: 3 },
       { name: 'Supabase', level: 3 },
+    ],
+  },
+  {
+    label: 'APIs & AI',
+    icon: 'CpuChipIcon',
+    skills: [
+      { name: 'RESTful APIs', level: 5 },
+      { name: 'GraphQL', level: 4 },
+      { name: 'LLM API Integration', level: 4 },
+      { name: 'RAG & Knowledge Search', level: 3 },
+      { name: 'AI Assistants & Chatbots', level: 4 },
+      { name: 'Prompt Guardrails & Fallbacks', level: 4 },
     ],
   },
   {
@@ -98,8 +111,8 @@ const skillCategories: SkillCategory[] = [
     label: 'AI & Productivity Tools',
     icon: 'CpuChipIcon',
     skills: [
-      { name: 'Gemini AI', level: 3 },
-      { name: 'GitHub Copilot Chat', level: 3 },
+      { name: 'AI Coding & Agentic Workflows', level: 4 },
+      { name: 'GitHub Copilot', level: 4 },
       { name: 'Technical Documentation', level: 4 },
       { name: 'Code Refactoring', level: 4 },
       { name: 'Automated Unit Testing', level: 3 },
