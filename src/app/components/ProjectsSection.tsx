@@ -16,7 +16,7 @@ const projects = [
     company: 'Rak Son OPC',
     duration: 'Jul 2023 - Apr 2026',
     role: 'Platform Manager (Web3)',
-    url: 'https://xgame.live/',
+    url: 'https://xgame.ai/',
     image: xGameImage,
     imageAlt:
       'Dark gaming platform interface with neon accent lights, digital game environment, moody atmospheric lighting',

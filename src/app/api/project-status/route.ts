@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 
 const PROJECT_URLS = {
-  xgame: 'https://xgame.live/',
+  xgame: 'https://xgame.ai/',
   multipayx: 'https://multipayx.net/',
   nipt: 'https://www.hiro-clinic.or.jp/',
   hogwildtoys: 'https://hogwildtoys.com/',
